@@ -1,0 +1,18 @@
+[
+  {
+    "modid": "www.yunmouren.top",
+    "name": "WEB",
+    "description": "WEB",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": [
+      "Yun_Nan"
+    ],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]
