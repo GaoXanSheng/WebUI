@@ -1,12 +1,12 @@
-package www.yunmouren.GUI.test;
+package www.yunmouren.GUI;
 
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
 
-public class ContainerDemo extends Container
+public class Container extends net.minecraft.inventory.Container
 {
-    public ContainerDemo()
+    public Container()
     {
         super();
     }

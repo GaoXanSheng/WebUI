@@ -1,4 +1,4 @@
-package www.yunmouren.GUI.test;
+package www.yunmouren.GUI;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
@@ -21,7 +21,7 @@ public class GuiElementLoader implements IGuiHandler
         switch (ID)
         {
             case GUI_DEMO:
-                return new ContainerDemo();
+                return new Container();
             default:
                 return null;
         }
@@ -33,7 +33,7 @@ public class GuiElementLoader implements IGuiHandler
         switch (ID)
         {
             case GUI_DEMO:
-                return new GuiContainerDemo(new ContainerDemo());
+                return new GuiContainer(new Container());
             default:
                 return null;
         }

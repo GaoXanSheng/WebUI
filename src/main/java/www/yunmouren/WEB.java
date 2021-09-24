@@ -5,7 +5,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import www.yunmouren.Command.CommandWEB;
-import www.yunmouren.GUI.test.GuiElementLoader;
+import www.yunmouren.GUI.GuiElementLoader;
 
 @Mod(
         modid = www.yunmouren.WEB.MOD_ID,
