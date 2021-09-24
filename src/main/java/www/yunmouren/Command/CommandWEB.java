@@ -1,17 +1,15 @@
-package www.yunmouren;
+package www.yunmouren.Command;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.text.TextComponentString;
-import net.montoyo.mcef.api.IBrowser;
+import www.yunmouren.WEB;
+
+import static www.yunmouren.GUI.test.GuiElementLoader.GUI_DEMO;
 
 public class CommandWEB extends CommandBase {
-    public Minecraft mc;
-    IBrowser browser = null;
-
     @Override
     public String getName() {
         return "web";
@@ -27,9 +25,9 @@ public class CommandWEB extends CommandBase {
         if (args.length == 0) {
             sender.sendMessage(new TextComponentString("web <url>"));
             sender.sendMessage(new TextComponentString("URL is required"));
-        } else {
-            sender.sendMessage(new TextComponentString(args[0]));
+        } else{
 //            加载网站
+            getPlayer(server,sender).openGui(WEB.INSTANCE,GUI_DEMO, sender.getEntityWorld(),0,0,0);
         }
     }
 
