@@ -1,7 +1,6 @@
 package www.yunmouren.GUI;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -9,7 +8,7 @@ import net.montoyo.mcef.api.API;
 import www.yunmouren.proxy.ClientProxy;
 
 @SideOnly(Side.CLIENT)
-public class GuiContainer extends GuiContainer {
+public class GuiContainer extends net.minecraft.client.gui.inventory.GuiContainer {
     private Minecraft mc = Minecraft.getMinecraft();
     private API api;
     private ClientProxy.PadData pad;
