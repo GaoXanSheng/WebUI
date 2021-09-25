@@ -8,6 +8,7 @@ import net.minecraft.util.text.TextComponentString;
 import www.yunmouren.WEB;
 
 import static www.yunmouren.GUI.GuiElementLoader.GUI_DEMO;
+import static www.yunmouren.WEB.url;
 
 public class CommandWEB extends CommandBase {
     @Override
@@ -28,10 +29,10 @@ public class CommandWEB extends CommandBase {
         }
         else {
             try{
-                URL = args[0];
+                url= args[0];
                 getPlayer(server, sender).openGui(WEB.INSTANCE, GUI_DEMO, sender.getEntityWorld(), 0, 0, 0);
             }catch (NullPointerException e){
-                sender.sendMessage(new TextComponentString("Command Not Running Because There Was An Error"));
+                sender.sendMessage(new TextComponentString("Command Not Running Server Because There Was An Error"));
                 sender.sendMessage(new TextComponentString("I can't tell you what the mistake was"));
             }
         }
@@ -43,7 +44,6 @@ public class CommandWEB extends CommandBase {
      * @param sender
      * @return
      */
-    public static String URL =null;
     public EntityPlayerMP getPlayer(MinecraftServer server, ICommandSender sender) {
         return server.getPlayerList().getPlayerByUsername(sender.getName());
     }

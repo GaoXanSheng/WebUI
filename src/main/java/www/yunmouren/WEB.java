@@ -14,7 +14,7 @@ import www.yunmouren.GUI.GuiElementLoader;
         dependencies = "required-after:mcef@[1.0,2.0);after:opencomputers;after:computercraft;"
 )
 public class WEB {
-
+    public static String url = null;
     public static final String MOD_ID = "web";
     public static final String MOD_NAME = "WEB";
     public static final String VERSION = "1.0-SNAPSHOT";

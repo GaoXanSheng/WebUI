@@ -6,7 +6,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.montoyo.mcef.api.API;
 import net.montoyo.mcef.api.MCEFApi;
 
-import static www.yunmouren.Command.CommandWEB.URL;
+import static www.yunmouren.WEB.url;
+
 
 @SideOnly(Side.CLIENT)
 public class GuiContainer extends net.minecraft.client.gui.inventory.GuiContainer {
@@ -21,9 +22,8 @@ public class GuiContainer extends net.minecraft.client.gui.inventory.GuiContaine
     protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) {
         API api =  MCEFApi.getAPI();
         drawString(mc.fontRenderer, "WEB UI", 2, 0, 10);
-        api.openExampleBrowser(URL);
+        api.openExampleBrowser(url);
     }
-
     @Override
     protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
         // TODO
