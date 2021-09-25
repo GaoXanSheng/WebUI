@@ -1,12 +1,7 @@
 package www.yunmouren.util;
 
-import net.montoyo.mcef.api.*;
+import net.montoyo.mcef.example.ExampleMod;
 
-public class Browser {
-    Browser (){
-
-
-    }
-    private API api;
+public class Browser extends ExampleMod {
 
 }

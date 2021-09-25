@@ -33,6 +33,7 @@ public class WEB {
     public void preinit(FMLPreInitializationEvent event) {
 
     }
+
     @Mod.EventHandler
     public void postinit(FMLPostInitializationEvent event) {
         new GuiElementLoader();
@@ -41,10 +42,11 @@ public class WEB {
     }
 
     @Mod.EventHandler
-    public static void serverInit(FMLServerStartingEvent event) {serverRegister(event);}
+    public static void serverInit(FMLServerStartingEvent event) {
+        serverRegister(event);
+    }
 
-    public static void serverRegister(FMLServerStartingEvent event)
-    {
+    public static void serverRegister(FMLServerStartingEvent event) {
         event.registerServerCommand(new CommandWEB());
     }
 }

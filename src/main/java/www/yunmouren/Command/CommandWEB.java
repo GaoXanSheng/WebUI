@@ -26,17 +26,17 @@ public class CommandWEB extends CommandBase {
         if (args.length == 0) {
             sender.sendMessage(new TextComponentString("web <url>"));
             sender.sendMessage(new TextComponentString("URL is required"));
-        }
-        else {
-            try{
-                url= args[0];
+        } else {
+            try {
+                url = args[0];
                 getPlayer(server, sender).openGui(WEB.INSTANCE, GUI_DEMO, sender.getEntityWorld(), 0, 0, 0);
-            }catch (NullPointerException e){
+            } catch (NullPointerException e) {
                 sender.sendMessage(new TextComponentString("Command Not Running Server Because There Was An Error"));
                 sender.sendMessage(new TextComponentString("I can't tell you what the mistake was"));
             }
         }
     }
+
     /**
      * 拿到玩家实体
      *
