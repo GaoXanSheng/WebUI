@@ -6,9 +6,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import www.yunmouren.util.Browser;
 
 
+
 @SideOnly(Side.CLIENT)
 public class GuiContainer extends net.minecraft.client.gui.inventory.GuiContainer {
     public Minecraft mc = Minecraft.getMinecraft();
+    public static String URL;
     public GuiContainer(Container inventorySlotsIn) {
         super(inventorySlotsIn);
         this.xSize = mc.displayWidth;
@@ -23,6 +25,9 @@ public class GuiContainer extends net.minecraft.client.gui.inventory.GuiContaine
     @Override
     protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
         // TODO
-        this.mc.displayGuiScreen(new Browser());
+        this.mc.displayGuiScreen(new Browser(URL));
+    }
+    public static void GetUrl(String url){
+        URL = url;
     }
 }

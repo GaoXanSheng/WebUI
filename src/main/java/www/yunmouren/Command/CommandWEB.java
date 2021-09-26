@@ -7,10 +7,13 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.text.TextComponentString;
 import org.jetbrains.annotations.NotNull;
 import www.yunmouren.WEB;
+import www.yunmouren.network.Message;
 
 import static www.yunmouren.GUI.GuiElementLoader.GUI_DEMO;
+import static www.yunmouren.WEB.getNetwork;
 
 public class CommandWEB extends CommandBase {
+    public static String url;
     @Override
     public @NotNull String getName() {
         return "web";
@@ -33,12 +36,16 @@ public class CommandWEB extends CommandBase {
             sender.sendMessage(new TextComponentString("URL is required"));
         } else {
             try {
+                getNetwork().sendTo(new Message(args[0]),getPlayer(server,sender));
                 getPlayer(server, sender).openGui(WEB.INSTANCE, GUI_DEMO, sender.getEntityWorld(), 0, 0, 0);
             } catch (NullPointerException e) {
                 sender.sendMessage(new TextComponentString("Command Not Running Server Because There Was An Error"));
                 sender.sendMessage(new TextComponentString("I can't tell you what the mistake was"));
             }
         }
+    }
+    public static String GetURl(){
+        return url;
     }
 
     /**
