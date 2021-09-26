@@ -7,7 +7,6 @@ import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.GuiTextField;
 import net.minecraft.client.renderer.GlStateManager;
-import net.montoyo.mcef.MCEF;
 import net.montoyo.mcef.api.API;
 import net.montoyo.mcef.api.IBrowser;
 import net.montoyo.mcef.api.MCEFApi;
@@ -27,7 +26,6 @@ public class Browser extends GuiScreen {
     private String urlToLoad;
 
     public Browser() {
-        this.urlToLoad = MCEF.HOME_PAGE;
     }
 
     public Browser(String url) {
@@ -39,7 +37,6 @@ public class Browser extends GuiScreen {
             if (api == null) {
                 return;
             }
-
             this.browser = api.createBrowser(urlToLoad, true);
             this.urlToLoad = null;
         }
@@ -88,6 +85,10 @@ public class Browser extends GuiScreen {
             this.urlToLoad = null;
         }
 
+    }
+    public void onGuiClosed() {
+        this.browser.close();
+        Keyboard.enableRepeatEvents(false);
     }
 
     public void drawScreen(int i1, int i2, float f) {
