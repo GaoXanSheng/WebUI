@@ -11,6 +11,7 @@ import static www.yunmouren.GUI.GuiElementLoader.GUI_DEMO;
 import static www.yunmouren.WEB.url;
 
 public class CommandWEB extends CommandBase {
+
     @Override
     public String getName() {
         return "web";
@@ -30,6 +31,7 @@ public class CommandWEB extends CommandBase {
             try {
                 url = args[0];
                 getPlayer(server, sender).openGui(WEB.INSTANCE, GUI_DEMO, sender.getEntityWorld(), 0, 0, 0);
+
             } catch (NullPointerException e) {
                 sender.sendMessage(new TextComponentString("Command Not Running Server Because There Was An Error"));
                 sender.sendMessage(new TextComponentString("I can't tell you what the mistake was"));

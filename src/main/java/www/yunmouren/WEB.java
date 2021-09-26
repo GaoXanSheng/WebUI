@@ -6,6 +6,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import www.yunmouren.Command.CommandWEB;
 import www.yunmouren.GUI.GuiElementLoader;
+import www.yunmouren.util.Browser;
 
 @Mod(
         modid = www.yunmouren.WEB.MOD_ID,
@@ -43,6 +44,7 @@ public class WEB {
 
     @Mod.EventHandler
     public static void serverInit(FMLServerStartingEvent event) {
+        new Browser();
         serverRegister(event);
     }
 
