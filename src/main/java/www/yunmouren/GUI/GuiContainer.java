@@ -3,7 +3,6 @@ package www.yunmouren.GUI;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import www.yunmouren.Command.CommandWEB;
 import www.yunmouren.util.Browser;
 
 
@@ -24,6 +23,6 @@ public class GuiContainer extends net.minecraft.client.gui.inventory.GuiContaine
     @Override
     protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
         // TODO
-        this.mc.displayGuiScreen(new Browser(CommandWEB.url));
+        this.mc.displayGuiScreen(new Browser());
     }
 }

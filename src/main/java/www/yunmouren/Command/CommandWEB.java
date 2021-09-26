@@ -11,8 +11,6 @@ import www.yunmouren.WEB;
 import static www.yunmouren.GUI.GuiElementLoader.GUI_DEMO;
 
 public class CommandWEB extends CommandBase {
-    public static String url;
-
     @Override
     public @NotNull String getName() {
         return "web";
@@ -24,12 +22,17 @@ public class CommandWEB extends CommandBase {
     }
 
     @Override
+    public int getRequiredPermissionLevel()
+    {
+        return 1;
+    }
+
+    @Override
     public void execute(@NotNull MinecraftServer server, @NotNull ICommandSender sender, String[] args) {
         if (args.length == 0) {
             sender.sendMessage(new TextComponentString("URL is required"));
         } else {
             try {
-                url = args[0];
                 getPlayer(server, sender).openGui(WEB.INSTANCE, GUI_DEMO, sender.getEntityWorld(), 0, 0, 0);
             } catch (NullPointerException e) {
                 sender.sendMessage(new TextComponentString("Command Not Running Server Because There Was An Error"));

@@ -24,19 +24,15 @@ public class Browser extends GuiScreen {
     private GuiButton min = null;
     private GuiButton vidMode = null;
     private GuiTextField url = null;
-    private String urlToLoad = null;
-    private static final String YT_REGEX1 = "^https?://(?:www\\.)?youtube\\.com/watch\\?v=([a-zA-Z0-9_\\-]+)$";
-    private static final String YT_REGEX2 = "^https?://(?:www\\.)?youtu\\.be/([a-zA-Z0-9_\\-]+)$";
-    private static final String YT_REGEX3 = "^https?://(?:www\\.)?youtube\\.com/embed/([a-zA-Z0-9_\\-]+)(\\?.+)?$";
+    private String urlToLoad;
 
     public Browser() {
         this.urlToLoad = MCEF.HOME_PAGE;
     }
 
     public Browser(String url) {
-        this.urlToLoad = url == null ? MCEF.HOME_PAGE : url;
+        this.urlToLoad = url;
     }
-
     public void initGui() {
         if (this.browser == null) {
             API api = MCEFApi.getAPI();
@@ -44,7 +40,7 @@ public class Browser extends GuiScreen {
                 return;
             }
 
-            this.browser = api.createBrowser(this.urlToLoad == null ? MCEF.HOME_PAGE : this.urlToLoad, true);
+            this.browser = api.createBrowser(urlToLoad, true);
             this.urlToLoad = null;
         }
 
