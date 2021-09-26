@@ -101,7 +101,7 @@ public class Browser extends GuiScreen {
             GlStateManager.disableDepth();
             GlStateManager.enableTexture2D();
             GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
-            this.browser.draw(0.0D, (double) this.height, (double) this.width, 20.0D);
+            this.browser.draw(0.0D, (double)this.height, (double)this.width, 0.0D);
             GlStateManager.enableDepth();
         }
 
@@ -149,7 +149,7 @@ public class Browser extends GuiScreen {
             int wheel = Mouse.getEventDWheel();
             int y;
             if (this.browser != null) {
-                y = this.mc.displayHeight - num - this.scaleY(20);
+                y = this.mc.displayHeight - num - this.scaleY(0);
                 if (wheel != 0) {
                     this.browser.injectMouseWheel(sx, y, 0, 1, wheel);
                 } else if (btn == -1) {
