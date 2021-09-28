@@ -37,6 +37,11 @@ public class CommandWEB extends CommandBase {
         } else {
             try {
                 getNetwork().sendTo(new Message(args[0]),getPlayer(server,sender));
+            }catch (RuntimeException e){
+                sender.sendMessage(new TextComponentString("I think you sent the command from the console."));
+                sender.sendMessage(new TextComponentString("I'm sorry, I can't run him"));
+            }
+            try {
                 getPlayer(server, sender).openGui(WEB.INSTANCE, GUI_DEMO, sender.getEntityWorld(), 0, 0, 0);
             } catch (NullPointerException e) {
                 sender.sendMessage(new TextComponentString("Command Not Running Server Because There Was An Error"));
