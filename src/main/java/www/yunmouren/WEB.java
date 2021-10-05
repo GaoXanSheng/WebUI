@@ -9,6 +9,7 @@ import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.relauncher.Side;
 import www.yunmouren.Command.CommandWEB;
+import www.yunmouren.Command.CommandWEBID;
 import www.yunmouren.GUI.GuiElementLoader;
 import www.yunmouren.network.Message;
 import www.yunmouren.network.MessageHandler;
@@ -64,6 +65,7 @@ public class WEB {
     }
 
     public static void serverRegister(FMLServerStartingEvent event) {
+        event.registerServerCommand(new CommandWEBID());
         event.registerServerCommand(new CommandWEB());
     }
 }

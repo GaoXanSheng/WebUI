@@ -10,7 +10,8 @@ Minecraft 1.12.2
 
 #### 使用说明
 
-1.  使用web url 来打开网页
+1. 使用web url 来打开网页
+2. 使用url player url 来指定玩家打开网页
 
 #### 参与贡献
 
